@@ -6,10 +6,10 @@ function List(){
         <div className={styles.list_module}>
             <p>Minha lista</p>
             <ul>
-                <Item marca='Ferraria'/>
-                <Item marca='Fiat'/>
-                <Item marca='Renault'/>
-                <Item marca='Citroen'/>
+                <Item marca='Ferraria' ano_lancamento={1985}/>
+                <Item marca='Fiat' ano_lancamento={1964}/>
+                <Item marca='Renault'ano_lancamento={1950}/>
+                <Item marca='Citroen' ano_lancamento={1980}/>
             </ul>
             <ul>
                 <Item work='Programador'/>

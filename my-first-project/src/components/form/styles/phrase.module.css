@@ -1,7 +1,7 @@
 .frase_container{
     width: 1000px;
     height: 1000px;
-    background: #141414;
+    background: #dedede;
     border: 1px solid #ffffff;
     margin: 2rem;
 }
@@ -9,3 +9,8 @@
 .frase_container div{
     margin: 2rem;
 }
+
+.p-new-list{
+    margin: 2rem;
+    color: #000000;
+}   

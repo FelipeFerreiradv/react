@@ -1,15 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
-import NewList from './components/form/newlist';
+import { useState } from 'react'
+import YourName from './components/form/yourName';
+import Hello from './components/form/hello.js';
 
 function App() {
-  const myItens = ['react', 'vue', 'angular'];
+  const [name, setName] = useState()
+
 
   return (
     <div className="App">
       <div className="App-header">
-      <h1>Renderizaçãoo de listas</h1>
-      <NewList items={myItens}/>
+        <h1>Statae Lift</h1>
+        <YourName setName={setName}/>
+        <Hello name={name}/>
       </div>
     </div>
   );

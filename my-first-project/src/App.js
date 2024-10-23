@@ -1,22 +1,37 @@
 // import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react'
-import YourName from './components/form/yourName';
-import Hello from './components/form/hello.js';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Home from './pages/Home'
+import Empresas from './pages/Empresa'
+import Contatos from './pages/Contato'
 
 function App() {
-  const [name, setName] = useState()
-
-
   return (
-    <div className="App">
-      <div className="App-header">
-        <h1>Statae Lift</h1>
-        <YourName setName={setName}/>
-        <Hello name={name}/>
-      </div>
-    </div>
-  );
+    <Router>
+      <nav>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
+        <div>
+          <Link to="/empresa">Empresas</Link>
+        </div>
+        <div>
+          <Link to="/contato">Contato</Link>
+        </div>
+      </nav>
+      <Switch>
+        <Route exact path='/'>
+          <Home/>
+        </Route>
+        <Route path='/empresas'>
+          <Empresas/>
+        </Route>
+        <Route path='/contato'>
+          <Contatos/>
+        </Route>
+      </Switch>
+    </Router>
+  )
 }
 
 export default App;

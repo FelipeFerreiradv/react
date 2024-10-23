@@ -1,0 +1,10 @@
+.nav_bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-bar div{
+    text-decoration: none;
+    color: #000000;
+}

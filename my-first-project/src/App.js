@@ -1,37 +1,23 @@
-// import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import Home from './pages/Home'
-import Empresas from './pages/Empresa'
-import Contatos from './pages/Contato'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Empresas from './pages/Empresa';
+import Contatos from './pages/Contato';
+import Navbar from './components/navbar';
+import Footer from './components/footer';
 
 function App() {
   return (
     <Router>
-      <nav>
-        <div>
-          <Link to="/">Home</Link>
-        </div>
-        <div>
-          <Link to="/empresa">Empresas</Link>
-        </div>
-        <div>
-          <Link to="/contato">Contato</Link>
-        </div>
-      </nav>
-      <Switch>
-        <Route exact path='/'>
-          <Home/>
-        </Route>
-        <Route path='/empresas'>
-          <Empresas/>
-        </Route>
-        <Route path='/contato'>
-          <Contatos/>
-        </Route>
-      </Switch>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/empresas" element={<Empresas />} />
+        <Route path="/contato" element={<Contatos />} />
+      </Routes>
+      <Footer/>
     </Router>
-  )
+  );
 }
 
 export default App;

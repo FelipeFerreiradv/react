@@ -1,6 +1,6 @@
 footer{
     width: 100%;
-    height: 100%;
+    height: 180px;
     background: #000000;
     color: #fff;
 }
@@ -8,6 +8,7 @@ footer{
 footer section{
     width: 100%;
     height: 100%;
+    background: #000000;
 }
 
 .divFooterMain{
@@ -34,4 +35,8 @@ footer section{
 
 .divFooterMain b{
     color: #ffbb33;
+}
+
+.divFooterMain p{
+    color: #ffffff;
 }

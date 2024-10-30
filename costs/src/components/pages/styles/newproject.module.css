@@ -1,0 +1,21 @@
+.sectionNewproject{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem auto;
+}
+.sectionNewproject div{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.sectionNewproject h1{
+    font-size: 46px;
+}
+
+.sectionNewproject div p{
+    max-width: 400px;
+    font-size: 20px;
+    color: #0000009e;
+}

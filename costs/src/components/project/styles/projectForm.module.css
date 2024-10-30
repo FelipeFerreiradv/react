@@ -1,0 +1,23 @@
+.forNewProject{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.forNewProject label{
+    font-weight: 700;
+    font-size: 23px;
+    color: #000000;
+}
+
+.forNewProject input{
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.forNewProject select{
+    border: none;
+    outline: none;
+    font-size: 20px;
+}

@@ -1,4 +1,4 @@
-.button{
+.submit{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,6 @@
     transition: .3s ease-in-out;
 }
 
-.button:hover{
+.submit:hover{
     color: var(--standard-color-medium-yellow);
 }

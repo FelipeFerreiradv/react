@@ -1,19 +1,45 @@
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+// import { method } from 'lodash';
+import Input from '../form/input';
+import Submit from '../form/submit';
+import Select from '../form/select';
 import styles from '../project/styles/projectForm.module.css';
 
 
-function ProjectForm(){
+function ProjectForm({ handleSubmit, btnText, projectData }){
+    const [categories, setCategories] = useState([]);
+    const [project, setProject] = useState(projectData || {});
+ 
+    useEffect(() =>{
+        fetch("http://localhost:5000/categories", {
+            method: "GET",
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then((data) =>{
+            setCategories(data);  
+        })
+        .catch((err) => console.log(err));
+    }, []);
+
+const submit = (e) =>{
+        e.preventDefault();
+        handleSubmit(project);
+    }
+
+    function handleChange(e){
+        setProject({ ...project, [e.target.name] : e.target.value})
+    }
+
     return(
-        <form className={styles.forNewProject}>
-            <label for="text">Name Project:</label>
-            <input type="text" name="text" id="text" placeholder="Insira o nome do projeto"/>
-            <label for="text">Orçamento do Projeto:</label>
-            <input type="number" name="number" id="number" placeholder="Insira o nome do projeto"/>
-            <label for="text">Selecione a Categoria:</label>
-            <select id="Selecione uma Opção>">
-                <option>Selecione uma opção</option>
-            </select>
-            <Link text="Criar Projeto"/>
+        <form onSubmit={submit} className={styles.forNewProject}>
+            <Input type="text" text="Nome do projeto" name="text" id="text" placeholder="Insira o nome do projeto" handleOnChange={handleChange}/>
+            <Input type="number" text="Insira o orçamento do produto" name="number" id="number" placeholder="Insira o nome do projeto" handleOnChange={handleChange}/>
+
+            <Select name="category_id" text="Selecione a Categoria" options={categories}/>
+            <Submit value="Criar Projeto"/>
         </form>
     )
 }

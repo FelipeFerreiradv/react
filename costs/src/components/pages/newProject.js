@@ -17,7 +17,7 @@ function Newproject(){
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(project),
-        }).then((responso) => responso.json())
+        }).then((response) => response.json())
         .then((data) =>{
             console.log(data)
             // redirect
